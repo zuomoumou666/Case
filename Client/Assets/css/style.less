@@ -1,0 +1,99 @@
+//case list
+@border-color:#80DEEA;
+.case_list{
+  position: relative;
+  @height:40px;
+  width:100%;
+  height:@height;
+  .list{
+    position: absolute;
+    top:0;
+    left:0;
+    right:@height + 10px;
+    bottom: 0;
+  }
+  .list_wrapper{
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    left:20px;
+    right:20px;
+    bottom: 0;
+  }
+  .item{
+    display: inline-block;
+    height:100%;
+    line-height: @height;
+    color:#fff;
+    font-size: 14px;
+    padding: 0 10px;
+    border-right:1px solid @border-color;
+    &:first-of-type{
+      border-left:1px solid @border-color;
+    }
+    border-radius: 5px;
+  }
+  .arrow{
+    position:absolute;
+    width:20px;
+    height:@height;
+    top:6px;
+    &.left{
+      left:0;
+    }
+    &.right{
+      right:0;
+    }
+  }
+  .add{
+    position:absolute;
+    width: @height;
+    right:0;
+    top:6px;
+  }
+
+}
+
+
+//message
+.message{
+  position:fixed;
+  z-index: 1401;
+  transform: translateX(-50%);
+  top: 16px;
+  pointer-events: none;
+  span{
+    z-index: 1401;
+  }
+  .message-notice{
+    color:#565656;
+    background-color:#fff;
+    border:1px solid @border-color;
+    padding:8px 12px;
+    border-radius: 1em;
+  }
+}
+
+.message-notice.move-up-leave.move-up-leave-active {
+  animation-name: MessageMoveOut;
+  overflow: hidden;
+  animation-duration: .3s;
+}
+
+@keyframes MessageMoveOut {
+  0% {
+    opacity: 1;
+    max-height: 150px;
+    padding: 8px;
+  }
+  100% {
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+  }
+}
+
+//case compile
+.case_compile{
+  
+}
